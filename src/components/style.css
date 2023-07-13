@@ -1,0 +1,42 @@
+#carousel{
+    height: 45vh;
+    width: 100vw;
+    background-color: #130f40;
+    padding: 50px 0;
+    justify-content: center
+
+}
+
+#carousel-card{
+    height: 100%;
+    width: 15%;
+    background-color: black;
+    display: inline-block;
+    margin-left: 8%;
+}
+
+
+#product-navbar{
+
+    height: 10vh;
+    width: 100vw;
+    background-color: yellow;
+    display: flex;
+    margin-bottom: 2vh;
+}
+
+#products-card{
+    height: 8vh;
+    width: 15vw;
+    background-color: purple;
+    display: block;
+    margin-left: 8%;
+}
+#product-img-div{
+    height: 60%;
+    width: 90%;
+    color: green;
+}
+#product-other-info{
+
+}
