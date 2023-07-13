@@ -1,6 +1,7 @@
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import { Link } from 'react-router-dom';
+import "./style.css"
 
 const NavBar=()=>{
     return(
@@ -18,16 +19,16 @@ const NavBar=()=>{
         <Navbar.Brand href="#home">Swiggy</Navbar.Brand>
         <Navbar.Toggle />
         <Navbar.Collapse className="justify-content-end">
-          <Navbar.Text>
-            <Link to="/"> Home</Link>
+          <Navbar.Text className="nav-links-box">
+            <Link className="nav-links" to="/"> Home</Link>
           </Navbar.Text>
-          <Navbar.Text>
-          <Link to="/contact"> ContactUS</Link>
+          <Navbar.Text className="nav-links-box">
+          <Link className="nav-links" id="happy" to="/contact"> ContactUS</Link>
           </Navbar.Text>
-          <Navbar.Text>
-          <Link to="/about"> Home</Link>
+          <Navbar.Text  className="nav-links-box">
+          <Link className="nav-links" to="/about">AboutUS</Link>
           </Navbar.Text>
-          <Navbar.Text>
+          <Navbar.Text className="nav-links-box" >
             Signed in as: <a href="#login">SignIN</a>
           </Navbar.Text>
         </Navbar.Collapse>

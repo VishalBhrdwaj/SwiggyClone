@@ -1,16 +1,16 @@
+import { FOOD_IMG_URL } from "../utils/constants"
 
 
-const ProductsCard=()=>{
+const ProductsCard=({restaurantData})=>{
+    console.log(restaurantData)
     return(
-
-        <div id="products-card">
-            <div id="product-img-div">
-                <img 
-                src=""
+        
+        <div className="products-card">
+               <div className="product-img-div">
+                <img style={{width:"100%",height:"100%"}} 
+                src={FOOD_IMG_URL+restaurantData?.data?.cloudinaryImageId}
                 />
-            </div>
-
-
+                </div>
         </div>
 
     )
