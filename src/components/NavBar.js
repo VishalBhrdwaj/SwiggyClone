@@ -29,7 +29,7 @@ const NavBar=()=>{
           <Link className="nav-links" to="/about">AboutUS</Link>
           </Navbar.Text>
           <Navbar.Text className="nav-links-box" >
-            Signed in as: <a href="#login">SignIN</a>
+            Signed in as: <Link className="nav-links" to="">Vishal BHardwaj</Link>
           </Navbar.Text>
         </Navbar.Collapse>
       </Container>

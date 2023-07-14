@@ -1,7 +1,7 @@
 #carousel{
     height: 45vh;
     width: 100vw;
-    background-color: #130f40;
+    background-color: #11151a;
     padding: 50px 0;
     justify-content: center
 
@@ -40,18 +40,82 @@
 
 .products-card{
     height: 350px;
-    width: 250px;
-    background-color: purple;
+    width: 300px;
+    /* background-color: purple; */
     display: inline-block;
     margin-left: 3%;
     margin-top: 3%;
+    padding: 22px;
 }
 .product-img-div{
-    height: 60%;
-    width: 90%;
-    margin: 15px 12px;
-    color: green;
+    height: 160px;
+    width: 254px;
+    margin-bottom: 15px;
 }
-#product-other-info{
+
+.product-other-info{
+    margin: 14px;
+}
+
+#shimmer-outer-div{
+    height: 80vh;
+    width: 70%;
+    /* background-color: #2b507d; */
+    display: inline-block;
+    overflow: hidden;
+}
+
+.shimmer-ui-cards{
 
 }
+#shimmer-side-nav-parent-div{
+    display: flex;
+    flex-direction: row;
+    margin-left: 10%;
+}
+#shimmer-ui-sidebar-parent-div{
+    border: 1px solid #dfe6e9 ;
+    height: 60vh;
+    width: 20vw;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    
+}
+
+.shimmer-ui-sidebar-element{
+    height: 100px;
+    width: 100%;
+    margin-top: 16% ;
+    display: flex;
+    flex-direction: row;
+}
+.shimmerui-sidebar-circle{
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    background-color: #dfe6e9; 
+    margin-top: 2% ;
+    margin-left: 8%;
+}
+.shimmerui-sidebar-rectangle{
+    height: 10px;
+    width:  40%;
+    background-color: #dfe6e9 ;
+    margin: 12%;
+}
+
+.loader {
+    border: 5px solid #f3f3f3; /* Light grey */
+    border-top: 5px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+

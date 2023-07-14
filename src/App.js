@@ -8,6 +8,7 @@ import { createBrowserRouter,Outlet,RouterProvider } from "react-router-dom";
 import AboutUs from "./components/AboutUs";
 import ContactUs from "./components/ContactUs";
 import Body from "./components/Body";
+import ShimmerUI from "./components/ShimmerUI/ShimmerUI";
 
 
 const App=()=>{

@@ -4,6 +4,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import ProductsCard from "./ProductsCard";
 import { useEffect, useState } from "react";
 import { FOOD_DATA_URL } from "../utils/constants";
+import ShimmerUI from "./ShimmerUI/ShimmerUI";
 
 export default Body=()=>{
     const [listOfRestaurants, setListOfRestraunt] = useState([]);
@@ -19,14 +20,14 @@ export default Body=()=>{
         setListOfRestraunt(foodData?.data?.cards[2]?.data?.data?.cards)
         console.log(foodData?.data?.cards[2]?.data?.data?.cards);
     }
-    return(
+    return listOfRestaurants.length===0? <ShimmerUI/> : (
        <>
        <ControlledCarousel/>
-        <ProductsNavBar/>
-        <Container>
+        <ProductsNavBar listOfRestaurants={listOfRestaurants}/>
+        <Container fluid>
             <Row>
                 <Col>
-                {
+                { 
                     listOfRestaurants.map((restaurant)=>{
                         return <ProductsCard key={restaurant?.data?.uuid} restaurantData={restaurant}  />
                     })
