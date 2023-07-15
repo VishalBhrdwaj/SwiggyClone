@@ -9,6 +9,7 @@ import AboutUs from "./components/AboutUs";
 import ContactUs from "./components/ContactUs";
 import Body from "./components/Body";
 import ShimmerUI from "./components/ShimmerUI/ShimmerUI";
+import { RestaurantMenuPage } from "./components/RestaurantMenu/RestaurantMenuPage";
 
 
 const App=()=>{
@@ -41,6 +42,10 @@ const appRouter=createBrowserRouter([
             {
                 path:"/contact",
                 element:<ContactUs/>
+            },
+            {
+                path:"/restaurant/:resId",
+                element:<RestaurantMenuPage/>
             }
            
         ],
