@@ -6,35 +6,53 @@ import { useEffect, useState } from "react";
 import { FOOD_DATA_URL } from "../utils/constants";
 import ShimmerUI from "./ShimmerUI/ShimmerUI";
 import { Link } from "react-router-dom";
+import { withPromotedLabel } from "./ProductsCard";
 
-export default Body=()=>{
-    const [listOfRestaurants, setListOfRestraunt] = useState([]);
+export default Body = () => {
+  const [listOfRestaurants, setListOfRestraunt] = useState([]);
 
-    useEffect(()=>{
-       fetchData();
-    },[])
+  useEffect(() => {
+    fetchData();
+  }, []);
 
-    const fetchData=async()=>{
-        const data=await fetch(FOOD_DATA_URL)
-        const foodData=await data.json();
-        setListOfRestraunt(foodData?.data?.cards[2]?.data?.data?.cards)
-    }
-    return listOfRestaurants.length===0? <ShimmerUI/> : (
-       <>
-       <ControlledCarousel/>
-        <ProductsNavBar listOfRestaurants={listOfRestaurants}/>
-        <Container fluid>
-            <Row>
-                <Col>
-                { 
-                    listOfRestaurants.map((restaurant)=>{
-                        return<Link style={{color:"black"}} key={restaurant?.data?.uuid} to={"/restaurant/"+restaurant?.data?.id}><ProductsCard  restaurantData={restaurant} /></Link>
-                    })
-                }
-                </Col>
-            </Row>
-            
-        </Container>
-       </>
-    )
-}
+  const fetchData = async () => {
+    const data = await fetch(FOOD_DATA_URL);
+    const foodData = await data.json();
+    setListOfRestraunt(foodData?.data?.cards[2]?.data?.data?.cards);
+  };
+
+  const ProductsCardwithPromotedLabel = withPromotedLabel(ProductsCard);
+  return listOfRestaurants.length === 0 ? (
+    <ShimmerUI />
+  ) : (
+    <>
+      <ControlledCarousel />
+      <ProductsNavBar listOfRestaurants={listOfRestaurants} />
+      <Container fluid>
+        <Row>
+          <Col>
+            {listOfRestaurants.map((restaurant) => {
+              return restaurant.data.promoted ? (
+                <Link
+                  style={{ color: "black" }}
+                  key={restaurant?.data?.uuid}
+                  to={"/restaurant/" + restaurant?.data?.id}
+                >
+                  <ProductsCardwithPromotedLabel restaurantData={restaurant} />
+                </Link>
+              ) : (
+                <Link
+                  style={{ color: "black" }}
+                  key={restaurant?.data?.uuid}
+                  to={"/restaurant/" + restaurant?.data?.id}
+                >
+                  <ProductsCard restaurantData={restaurant} />
+                </Link>
+              );
+            })}
+          </Col>
+        </Row>
+      </Container>
+    </>
+  );
+};
