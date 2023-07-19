@@ -39,7 +39,7 @@ const NavBar = () => {
             </Link>
           </Navbar.Text>
           
-          <Link className="hover:text-orange-400" to=""><svg
+          <Link className="hover:text-orange-400" to="/cart"><svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
             viewBox="0 0 24 24"
