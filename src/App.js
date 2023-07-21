@@ -13,6 +13,7 @@ import { RestaurantMenuPage } from "./components/RestaurantMenu/RestaurantMenuPa
 import CartComponent from "./components/Cart/CartComponent";
 import { CartItemsContext } from "./utils/CartItemsContext";
 import { TotalBill } from "./utils/BillOfItemsContext";
+import LoginForm from "./components/Login/LoginForm";
 
 
 const App=()=>{
@@ -25,6 +26,7 @@ const App=()=>{
         <CartItemsContext.Provider value={{cartItems:cartItems,setCartItems:setCartItems}}>
         <TotalBill.Provider value={{totalBill,setTotalBill}}>
         <NavBar/>
+        {/* <LoginForm/> */}
            <Outlet/>
         <Footer/>
         </TotalBill.Provider>
