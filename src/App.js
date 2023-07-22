@@ -8,30 +8,29 @@ import { createBrowserRouter,Outlet,RouterProvider } from "react-router-dom";
 import AboutUs from "./components/AboutUs";
 import ContactUs from "./components/ContactUs";
 import Body from "./components/Body";
-import ShimmerUI from "./components/ShimmerUI/ShimmerUI";
 import { RestaurantMenuPage } from "./components/RestaurantMenu/RestaurantMenuPage";
 import CartComponent from "./components/Cart/CartComponent";
-import { CartItemsContext } from "./utils/CartItemsContext";
-import { TotalBill } from "./utils/BillOfItemsContext";
+
 import LoginForm from "./components/Login/LoginForm";
+import Store from "./components/redux/Store";
+import { Provider } from "react-redux";
+
 
 
 const App=()=>{
 
     const [cartItems,setCartItems]=useState([{name:"Vishal",price:2000,imageId:"9db769ca3ff44bb6372e8a652663eb6e"}])
     const [totalBill,setTotalBill]=useState(0);
+    
   
     return(
         <>
-        <CartItemsContext.Provider value={{cartItems:cartItems,setCartItems:setCartItems}}>
-        <TotalBill.Provider value={{totalBill,setTotalBill}}>
+        <Provider store={Store}>
         <NavBar/>
         {/* <LoginForm/> */}
            <Outlet/>
         <Footer/>
-        </TotalBill.Provider>
-      </CartItemsContext.Provider>
-        
+      </Provider>
         </>
         
     )

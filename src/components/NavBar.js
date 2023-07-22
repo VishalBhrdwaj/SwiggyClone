@@ -2,10 +2,14 @@ import Container from "react-bootstrap/Container";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 import "./style.css";
+import { useSelector } from "react-redux";
+import Store from "./redux/Store";
 
 const NavBar = () => {
+  const items=useSelector(Store=>Store.cart.items);
+
   return (
-    <div className="flex justify-between h-16 w-full bg-sky-300 mt">
+    <div className="flex justify-between h-16 w-full mt">
       <div className="mt-3 ml-10 flex ">
         <span> <img
       src="https://miro.medium.com/v2/resize:fit:1000/1*TCc6vQVH-3EUiJea76pMbQ.png"
@@ -18,11 +22,11 @@ const NavBar = () => {
       </div>
       <div className="mr-10 w-2/6">
         <ul className="flex justify-between pl- pt-2 text-lg">
-          <li className="mt-2 hover:cursor-pointer hover:border-b-2 border-orange-400 hover:text-orange-500">Home</li>
-          <li className="mt-2 hover:cursor-pointer hover:border-b-2 border-orange-400 hover:text-orange-500">🔍Search</li>
-          <li className="mt-2 hover:cursor-pointer hover:border-b-2 border-orange-400 hover:text-orange-500">Offers</li>
-          <li className="mt-2 hover:cursor-pointer hover:border-b-2 border-orange-400 hover:text-orange-500">Signin</li>
-          <li className="mt-2 hover:cursor-pointer hover:border-b-2 border-orange-400 hover:text-orange-500">🛒Cart</li>
+        <Link to="/"><li className="mt-2 hover:cursor-pointer hover:border-b-2 border-orange-400 hover:text-orange-500">Home</li></Link>
+        <Link to="/about"><li className="mt-2 hover:cursor-pointer hover:border-b-2 border-orange-400 hover:text-orange-500">🔍Search</li></Link>
+        <Link to="/about"><li className="mt-2 hover:cursor-pointer hover:border-b-2 border-orange-400 hover:text-orange-500">Offers</li></Link>
+        <Link to="/about"><li className="mt-2 hover:cursor-pointer hover:border-b-2 border-orange-400 hover:text-orange-500">Signin</li></Link>
+        <Link to="/cart"><li className="mt-2 hover:cursor-pointer hover:border-b-2 border-orange-400 hover:text-orange-500">🛒Cart-{items.length}</li></Link>
         </ul>
       </div>
     </div>

@@ -1,7 +1,6 @@
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../../utils/useResturantsMenu";
 import ShimmerUI from "../ShimmerUI/ShimmerUI";
-import { Col, Container } from "react-bootstrap";
 import RestaurantFoodCard from "./RestaurantFoodCard";
 export function RestaurantMenuPage() {
   const { resId } = useParams();
