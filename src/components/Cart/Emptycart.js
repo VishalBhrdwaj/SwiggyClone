@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 
 export default EmptyCart=()=>{
     return (
@@ -8,7 +9,7 @@ export default EmptyCart=()=>{
                 </div>
                 <div className="mt-5 ml-16 text-lg font-semibold">Your Cart is Empty !</div>
                 <div className="mt-3 ml-16 ">You can go to home page to view more restaurants</div>
-                <div className="ml-16"><button className="bg-orange-400 px-3 py-3 mt-5 text-white font-semibold rounded-lg">SEE RESTAURANTS NEAR YOU</button></div>
+                <div className="ml-16"><Link to="/"><button className="bg-orange-400 px-3 py-3 mt-5 text-white font-semibold rounded-lg">SEE RESTAURANTS NEAR YOU</button></Link></div>
             </div>
 
         </div>
