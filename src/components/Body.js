@@ -36,7 +36,7 @@ export default Body = () => {
         <Row>
           <Col>
             {listOfRestaurants.map((restaurant,index) => {
-              console.log(restaurant);
+              console.log(restaurant.info);
               // return restaurant.data.promoted ? (
               //   <Link
               //     style={{ color: "black" }}
