@@ -18,11 +18,15 @@ export default Body = () => {
   const fetchData = async () => {
     const data = await fetch(FOOD_DATA_URL);
     const foodData = await data.json();
-    setListOfRestraunt(foodData?.data?.cards[2]?.data?.data?.cards);
+    // console.log(listOfRestaurants);
+    // console.log(foodData?.data?.cards[5]?.card.card.gridElements.infoWithStyle.restaurants);
+    // setListOfRestraunt(foodData?.data?.cards[5]?.card.card);
+    setListOfRestraunt(foodData?.data?.cards[5]?.card.card.gridElements.infoWithStyle.restaurants);
+
   };
 
   const ProductsCardwithPromotedLabel = withPromotedLabel(ProductsCard);
-  return listOfRestaurants.length === 0 ? (
+  return listOfRestaurants.length ==0 ? (
     <ShimmerUI />
   ) : (
     <>
@@ -31,24 +35,25 @@ export default Body = () => {
       <Container fluid>
         <Row>
           <Col>
-            {listOfRestaurants.map((restaurant) => {
-              return restaurant.data.promoted ? (
-                <Link
+            {listOfRestaurants.map((restaurant,index) => {
+              console.log(restaurant);
+              // return restaurant.data.promoted ? (
+              //   <Link
+              //     style={{ color: "black" }}
+              //     key={restaurant?.data?.uuid}
+              //     to={"/restaurant/" + restaurant?.data?.id}
+              //   >
+              //     <ProductsCardwithPromotedLabel restaurantData={restaurant} />
+              //   </Link>
+              // ) : (
+               return <Link
                   style={{ color: "black" }}
-                  key={restaurant?.data?.uuid}
-                  to={"/restaurant/" + restaurant?.data?.id}
-                >
-                  <ProductsCardwithPromotedLabel restaurantData={restaurant} />
-                </Link>
-              ) : (
-                <Link
-                  style={{ color: "black" }}
-                  key={restaurant?.data?.uuid}
-                  to={"/restaurant/" + restaurant?.data?.id}
+                  key={restaurant?.info.id}
+                  to={"/restaurant/" + restaurant?.info?.id}
                 >
                   <ProductsCard restaurantData={restaurant} />
                 </Link>
-              );
+              // );
             })}
           </Col>
         </Row>
