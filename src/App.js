@@ -14,6 +14,7 @@ import CartComponent from "./components/Cart/CartComponent";
 import LoginForm from "./components/Login/LoginForm";
 import Store from "./components/redux/Store";
 import { Provider } from "react-redux";
+import LoginPage from "./components/Auth/LoginPage";
 
 
 
@@ -61,6 +62,11 @@ const appRouter=createBrowserRouter([
             {
                 path:"/cart",
                 element:<CartComponent/>
+
+            },
+            {
+                path:"/signin",
+                element:<LoginPage/>
 
             }
            

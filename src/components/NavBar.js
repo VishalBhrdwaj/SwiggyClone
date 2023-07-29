@@ -22,11 +22,11 @@ const NavBar = () => {
       </div>
       <div className="mr-10 w-2/6">
         <ul className="flex justify-between pl- pt-2 text-lg">
-        <Link to="/"><li className="mt-2 hover:cursor-pointer hover:border-b-2 border-orange-400 hover:text-orange-500">Home</li></Link>
-        <Link to="/about"><li className="mt-2 hover:cursor-pointer hover:border-b-2 border-orange-400 hover:text-orange-500">🔍Search</li></Link>
-        <Link to="/about"><li className="mt-2 hover:cursor-pointer hover:border-b-2 border-orange-400 hover:text-orange-500">Offers</li></Link>
-        <Link to="/about"><li className="mt-2 hover:cursor-pointer hover:border-b-2 border-orange-400 hover:text-orange-500">Signin</li></Link>
-        <Link to="/cart"><li className="mt-2 hover:cursor-pointer hover:border-b-2 border-orange-400 hover:text-orange-500">🛒Cart-{items.length}</li></Link>
+        <Link to="/"><li className="mt-2 hover:cursor-pointer hover:scale-125 transition ease-in-out hover:border-b-2 border-orange-400 hover:text-orange-500">Home</li></Link>
+        <Link to="/about"><li className="mt-2 hover:cursor-pointer hover:scale-125 transition ease-in-out hover:border-b-2 border-orange-400 hover:text-orange-500">🔍Search</li></Link>
+        <Link to="/about"><li className="mt-2 hover:cursor-pointer hover:scale-125 transition ease-in-out hover:border-b-2 border-orange-400 hover:text-orange-500">Offers</li></Link>
+        <Link to="/signin"><li className="mt-2 hover:cursor-pointer hover:scale-125 transition ease-in-out hover:border-b-2 border-orange-400 hover:text-orange-500">Signin</li></Link>
+        <Link to="/cart"><li className="mt-2 hover:cursor-pointer hover:scale-125 transition ease-in-out hover:border-b-2 border-orange-400 hover:text-orange-500">🛒Cart-{items.length}</li></Link>
         </ul>
       </div>
     </div>

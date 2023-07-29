@@ -21,19 +21,19 @@ export default CartComponent = () => {
           <div className="font-semibold text-2xl border-b-2 border-sky-950 w-5/6">Price Details</div>
           <div className=" flex justify-between w-5/6 mt-4 text-xl">
             <span>Total Price</span>
-            <span>₹{totalBill}</span>
+            <span>₹{Math.round(totalBill)}</span>
           </div>
           <div className=" flex justify-between w-5/6 mt-4 text-xl">
             <span>Discount</span>
-            <span>₹{totalBill}</span>
+            <span>₹{Math.round(totalBill)}</span>
           </div>
           <div className=" flex justify-between w-5/6 mt-4 text-xl border-dotted border-b-2 border-sky-950 pb-5">
             <span>Delivery Charges</span>
-            <span>{totalBill>500 ? "Free":"₹ 100"}</span>
+            <span>{totalBill>300 ? "Free":"₹ 100"}</span>
           </div>
           <div className=" flex justify-between w-5/6 mt-4 font-semibold   text-xl border-dotted border-b-2 border-sky-950 pb-3">
             <span>Total Amount</span>
-            <span>₹{totalBill}</span>
+            <span>₹{Math.round(totalBill)}</span>
           </div>
           <div className=" flex justify-between w-5/6 mt-4 text-lg border-dotted border-b-2 border-sky-950 pb-3">
             <span>You will save ₹2,140 on this order</span>

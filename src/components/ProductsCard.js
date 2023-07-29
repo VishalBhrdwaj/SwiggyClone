@@ -3,7 +3,6 @@ import { FOOD_IMG_URL } from "../utils/constants";
 
 const ProductsCard = (props) => {
   const restaurantData=props.restaurantData.info;
-  console.log(restaurantData);
   function changeBorder(e) {
 
   }
@@ -13,7 +12,7 @@ const ProductsCard = (props) => {
     <div
       onMouseEnter={changeBorder}
       onMouseLeave={toggleBorder}
-      className="products-card overflow-hidden  hover:shadow-xl  "
+      className="products-card overflow-hidden  hover:shadow-xl transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300  "
     >
       <div className="product-img-div rounded-lg ">
         <img
@@ -23,12 +22,12 @@ const ProductsCard = (props) => {
         />
       </div>
       <div id="product-name" className="text-xl font-semibold">{restaurantData?.name}</div>
-      <div id="product-cuisines" className="truncate">
+      <div id="product-cuisines" className="truncate mt-2">
         {<>{restaurantData?.cuisines.join(", ")}</>}
       </div>
-      <div className="flex justify-between">
+      <div className="flex mt-2 justify-between">
         <span className="">❇️{restaurantData?.avgRating}</span>
-        <span className="">{restaurantData?.sla.deliveryTime} MINS</span>
+        <span className="">⏰{restaurantData?.sla.deliveryTime} MINS</span>
         <span className="">{restaurantData?.costForTwo}</span>
       </div>
     </div>

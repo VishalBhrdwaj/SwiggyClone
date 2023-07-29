@@ -30,7 +30,6 @@ export default CartItems = (props) => {
     }
     useEffect(()=>{
       
-        dispatch(increase(item.price/100));
         setItemVisible(true);
        
     },[])

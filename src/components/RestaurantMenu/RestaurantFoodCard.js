@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
 import { RESTAURANT_ITEMS_IMG } from "../../utils/constants";
-import { addItems } from "../redux/CartSlice";
+import { addItems, increase } from "../redux/CartSlice";
 import { useState } from "react";
 export default function RestaurantFoodCard(props) {
   const { name, description, price, imageId } = props.item.card.info;
@@ -22,6 +22,8 @@ export default function RestaurantFoodCard(props) {
           disabled={buttonText!="Add +"?true:false}
             onClick={() => {
               dispatch(addItems(props.item.card.info))
+              console.log(props.item.card.info);
+              dispatch(increase((props.item.card.info.price)/100));
               setButtonText("Added ☑️");
             }}
             className=" hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" style={{backgroundColor:buttonText=="Added ☑️"?"#ff6348":"#1e90ff"}}
